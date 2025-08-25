@@ -6,13 +6,12 @@ import Library from './ch03/Library'
 import Button from './ch04/Button';
 import ConfirmDialog from './ch04/Button';
 import Clock from './ch04/Clock';
+import CommentList from './ch05/CommemtList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-setInterval(() => {
-  root.render(
-    <Clock />
-  );
-}, 1000);
+root.render(
+  <CommentList />
+);
 
 
 // If you want to start measuring performance in your app, pass a function
