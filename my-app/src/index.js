@@ -7,10 +7,12 @@ import Button from './ch04/Button';
 import ConfirmDialog from './ch04/Button';
 import Clock from './ch04/Clock';
 import CommentList from './ch05/CommemtList';
+import AttdanceBook from './ch10/AttendanceBook';
+import SignUp from './ch11/SignUp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <CommentList />
+  <SignUp />
 );
 
 
