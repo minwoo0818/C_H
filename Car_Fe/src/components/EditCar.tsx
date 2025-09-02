@@ -11,7 +11,7 @@ type EditCarProps = {
     loadCarData: () => void;
 }
 
-export default function EditCar({carData}: EditCarProps) {
+export default function EditCar({carData,loadCarData}: EditCarProps) {
     const [open,setOpen] = useState(false);
     const [car,setCar] = useState<Car>({
         id: 0, brand: '', model: '', color: '', registrationNumber: '', modelYear: 0, price:  0
@@ -31,7 +31,7 @@ export default function EditCar({carData}: EditCarProps) {
     }
     const handleClose = () => setOpen(false);
 
-    const handleSave = async({loadCarData}:EditCarProps) => {
+    const handleSave = async() => {
         await updateCar(car);
         loadCarData();
         setCar({id: 0, brand: '', model: '', color: '', registrationNumber: '', modelYear: 0, price:  0});
