@@ -1,0 +1,9 @@
+1. 호스트가 된 유저의 준비 -> 시작 으로 바꿔지지 않음
+2. 5개 키워드에서 정답이 왜 안되누 = [다중 키워드는 keywordlist로 관리를 했었음 작동되게 수정 하였고 나중엔 keyword랑 keywordlist랑 통합 하기]
+3. 5개가 아니라 4개가 전달됨 -> 5개 째에서 번역된 키워드는 sendkeywordlist에 포함 안됨
+4. 출제자는 다른 사람의 정답 입력을 기다리는 동안 자신이 출제한 키워드 보이게 하기 -> DebugText.Text에 넣음, DebugText.Text를 표기하면 됨
+5. keywordList[0]은 키워드를 넣지 않고 비워져 있는데 WHy?
+6. sendkeywordresult 에러 : System.IndexOutOfRangeException: Index was outside the bounds of the array.
+  at NetworkController.NetworkSequence (System.String type, System.Boolean result) [0x004ef] in C:\Users\mari4\OneDrive\바탕 화면\RSM\SourceTree\2. 클라이언트\0925\Assets\Scripts\NetworkScripts\NetworkController.cs:245
+7. 일단 정답은 되는데 keywordlist의 0번은 항상 공백임, 그래서 키워드 1개가 sendkeywordlist로 서버에게 전달되지 않음, 그래서 클라도 한개 누락됨
+ 서버랑 클라의 클래스, 구조체 간의 호환 이슈 였음. 우리가 잘못 코딩한게 아니라 둘이 소통의 문제 였음. 원래하던대로 배열이나 이런거로 바꿔도 잘 작동 될꺼임
